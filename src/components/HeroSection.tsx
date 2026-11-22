@@ -140,7 +140,7 @@ export const HeroSection: React.FC<{ onOpenResume: () => void }> = ({ onOpenResu
 
               {/* High-Resolution Professional Portrait */}
               <img
-                src="/photos/hero-crimson.png"
+                src="/photos/portrait-suit.jpg"
                 alt="Vishwaraj Algude — Computer Science Engineering Graduate"
                 className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 loading="eager"

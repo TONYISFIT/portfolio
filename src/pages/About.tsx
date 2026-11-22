@@ -18,6 +18,8 @@ import {
   CheckCircle2,
   HelpCircle,
   FileText,
+  Maximize2,
+  Camera,
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -28,9 +30,6 @@ export const About: React.FC = () => {
   // Teleprompter / Interview Practice Mode
   const [isTeleprompterMode, setIsTeleprompterMode] = useState(false);
   const [teleprompterStep, setTeleprompterStep] = useState(0);
-
-  // Accordion active index for color-strip gallery (Reference 5)
-  const [activeStripIndex, setActiveStripIndex] = useState(0);
 
   const introBlocks = [
     { label: 'Who I Am', tag: '01 / GREETING', text: profileData.introduction.greeting },
@@ -170,7 +169,7 @@ export const About: React.FC = () => {
                   <img src={photosData[1].src} alt={photosData[1].alt} className="h-full w-full object-cover" />
                 </div>
                 <p className="mt-1 font-mono text-[9px] text-midnight text-center font-bold">
-                  CAMPUS · 2026
+                  DISCIPLINE · 2026
                 </p>
               </div>
 
@@ -180,7 +179,7 @@ export const About: React.FC = () => {
                   <img src={photosData[2].src} alt={photosData[2].alt} className="h-full w-full object-cover" />
                 </div>
                 <p className="mt-1 font-mono text-[9px] text-midnight text-center font-bold">
-                  FESTIVE · VA
+                  BALANCE · VA
                 </p>
               </div>
             </div>
@@ -210,58 +209,69 @@ export const About: React.FC = () => {
         </section>
       )}
 
-      {/* 3. Color-Strip Accordion Gallery (Reference 5) */}
+      {/* 3. Featured Photo Gallery (Single row of 3 on desktop, stacked on mobile) */}
       <section className="mb-20">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span className="font-mono text-xs text-antiqueGold uppercase tracking-widest">[03] COLOR-STRIP GALLERY</span>
+            <span className="font-mono text-xs text-antiqueGold uppercase tracking-widest">[03] LIFESTYLE & DISCIPLINE</span>
             <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-warmWhite mt-1">
-              Visual Slices
+              Formal, Gym & Balance
             </h3>
-            <p className="text-xs text-mutedIndigo font-sans">
-              Expanding vertical color-block columns (Indigo / Plum / Teal / Gold). Click or hover to reveal.
+            <p className="text-xs text-mutedIndigo font-sans mt-1">
+              Academic focus, athletic consistency, and outdoor companionship behind the engineering discipline.
             </p>
+          </div>
+
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-plum/40 px-4 py-1.5 font-mono text-xs text-champagne">
+            <Camera className="h-3.5 w-3.5 text-antiqueGold" />
+            <span>3 Moments</span>
           </div>
         </div>
 
-        {/* Color-strip flex container */}
-        <div className="flex flex-col md:flex-row h-[420px] gap-3">
-          {photosData.map((photo, idx) => {
-            const isActive = idx === activeStripIndex;
-
-            return (
-              <div
-                key={photo.id}
-                onMouseEnter={() => setActiveStripIndex(idx)}
-                onClick={() => {
-                  setActiveStripIndex(idx);
-                  setSelectedPhotoIndex(idx);
-                  setLightboxOpen(true);
-                }}
-                className={cn(
-                  'relative rounded-2xl overflow-hidden border cursor-pointer transition-all duration-700 ease-out flex-shrink-0',
-                  isActive
-                    ? 'md:flex-[3] border-antiqueGold shadow-gold-glow'
-                    : 'md:flex-1 border-white/10 opacity-70 hover:opacity-100'
-                )}
-              >
+        {/* Gallery Grid: Single row of 3 on desktop (md:grid-cols-3), stacked one per row on mobile (grid-cols-1) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {photosData.map((photo, idx) => (
+            <div
+              key={photo.id}
+              onClick={() => {
+                setSelectedPhotoIndex(idx);
+                setLightboxOpen(true);
+              }}
+              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-plum/40 shadow-indigo-card cursor-pointer transition-all duration-300 hover:border-antiqueGold/60 hover:shadow-gold-glow flex flex-col justify-between"
+            >
+              {/* Photo Frame */}
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-midnight">
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/30 to-transparent p-4 flex flex-col justify-end">
-                  <span className="font-mono text-[10px] text-antiqueGold font-bold">
-                    FRAME 0{idx + 1}
-                  </span>
-                  <p className={cn('font-display text-xs font-bold text-warmWhite', !isActive && 'hidden md:block')}>
-                    {photo.caption || photo.alt}
-                  </p>
+                {/* Subtle vignette and bottom dark gradient */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                {/* Enlarge Icon Badge */}
+                <div className="absolute top-3 right-3 rounded-full bg-midnight/70 backdrop-blur-md p-2 border border-white/10 text-champagne group-hover:text-warmWhite group-hover:border-antiqueGold transition-colors">
+                  <Maximize2 className="h-3.5 w-3.5 text-antiqueGold" />
                 </div>
               </div>
-            );
-          })}
+
+              {/* Caption & Metadata Footer with Custom Category Name (formal, gym, companionship) */}
+              <div className="p-4 bg-plum/70 border-t border-white/10 space-y-1">
+                <div className="flex items-center justify-between text-[10px] font-mono">
+                  <span className="text-antiqueGold font-bold uppercase tracking-wider">
+                    0{idx + 1} // {photo.tag || 'FEATURED'}
+                  </span>
+                  <span className="text-mutedIndigo">CLICK TO ENLARGE</span>
+                </div>
+                <p className="text-xs text-warmWhite/90 font-sans line-clamp-2 leading-snug">
+                  {photo.caption}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

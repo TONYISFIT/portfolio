@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { photosData } from '../data/photos';
 import { Lightbox } from './Lightbox';
-import { Camera, Sparkles, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { Camera, Maximize2 } from 'lucide-react';
 
 export const MomentsStrip: React.FC = () => {
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
@@ -30,18 +29,18 @@ export const MomentsStrip: React.FC = () => {
               Beyond the Terminal.
             </h2>
             <p className="mt-3 text-sm text-mutedGray max-w-2xl font-sans leading-relaxed">
-              Academic milestones, cultural roots, outdoor balance, and the physical discipline and fitness consistency that inspired projects like FitVerse and GymPulse.
+              Academic milestones, physical discipline and fitness consistency, and outdoor companionship that inspire my work and problem solving.
             </p>
           </div>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-darkBorder bg-darkCard px-4 py-1.5 font-mono text-xs text-cream/80">
             <Camera className="h-4 w-4 text-crimson" />
-            <span>Editorial Visual Chronicle</span>
+            <span>Featured Gallery</span>
           </div>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Gallery Grid: Single row of 3 on desktop (md:grid-cols-3), stacked one per row on mobile (grid-cols-1) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {photosData.map((photo, idx) => (
             <div
               key={photo.id}
@@ -67,13 +66,13 @@ export const MomentsStrip: React.FC = () => {
                 </div>
               </div>
 
-              {/* Caption & Metadata Footer */}
+              {/* Caption & Metadata Footer with Custom Category Name (formal, gym, companionship) */}
               <div className="p-4 bg-darkCard border-t border-darkBorder/60 space-y-1">
                 <div className="flex items-center justify-between text-[10px] font-mono">
                   <span className="text-crimson font-bold uppercase tracking-wider">
-                    0{idx + 1} // CHRONICLE
+                    0{idx + 1} // {photo.tag || 'FEATURED'}
                   </span>
-                  <span className="text-mutedGray">CLICK TO VIEW</span>
+                  <span className="text-mutedGray">CLICK TO ENLARGE</span>
                 </div>
                 <p className="text-xs text-cream/90 font-sans line-clamp-2 leading-snug">
                   {photo.caption}

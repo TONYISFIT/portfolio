@@ -34,7 +34,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenResume }) => {
       {/* 02 / ABOUT ME SECTION */}
       <AboutSection />
 
-      {/* 03 / PERSONAL CHRONICLE & LIFESTYLE MOMENTS */}
+      {/* 03 / FEATURED GALLERY & LIFESTYLE MOMENTS */}
       <MomentsStrip />
 
       {/* 04 / SKILLS & TECHNOLOGIES */}

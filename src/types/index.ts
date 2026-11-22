@@ -58,6 +58,7 @@ export interface PhotoItem {
   id: string;
   src: string;
   alt: string;
+  tag?: string;
   caption?: string;
   focalPoint?: string;
   orientation: 'landscape' | 'portrait' | 'wide';
