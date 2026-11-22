@@ -2,7 +2,7 @@
  * Global Site Configuration for Vishwaraj Algude Portfolio
  * Set SITE_URL to your Vercel deployment URL after deploying.
  */
-export const SITE_URL = 'https://vishwaraj-algude.vercel.app';
+export const SITE_URL = 'https://portfolio-pink-iota-38.vercel.app';
 
 export const siteConfig = {
   name: 'Vishwaraj Algude',

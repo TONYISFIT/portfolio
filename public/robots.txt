@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vishwaraj-algude.vercel.app/sitemap.xml
+Sitemap: https://portfolio-pink-iota-38.vercel.app/sitemap.xml

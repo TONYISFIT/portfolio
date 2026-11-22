@@ -26,7 +26,7 @@ export const MomentsStrip: React.FC = () => {
               LIFE & DISCIPLINE
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-black uppercase tracking-tight text-cream">
-              Beyond the Terminal.
+              Corporate, Fitness & Creator
             </h2>
             <p className="mt-3 text-sm text-mutedGray max-w-2xl font-sans leading-relaxed">
               Academic milestones, physical discipline and fitness consistency, and outdoor companionship that inspire my work and problem solving.

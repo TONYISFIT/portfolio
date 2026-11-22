@@ -215,7 +215,7 @@ export const About: React.FC = () => {
           <div>
             <span className="font-mono text-xs text-antiqueGold uppercase tracking-widest">[03] LIFESTYLE & DISCIPLINE</span>
             <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-warmWhite mt-1">
-              Formal, Gym & Balance
+              Corporate, Fitness & Creator
             </h3>
             <p className="text-xs text-mutedIndigo font-sans mt-1">
               Academic focus, athletic consistency, and outdoor companionship behind the engineering discipline.
