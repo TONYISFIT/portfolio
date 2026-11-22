@@ -1,0 +1,58 @@
+import { PhotoItem } from '../types';
+
+export const photosData: PhotoItem[] = [
+  {
+    id: 'photo-suit',
+    src: '/photos/portrait-suit.jpg',
+    alt: 'Vishwaraj Algude — Professional Formal Suit Portrait',
+    caption: 'Academic & Professional Focus · B.Tech Computer Science & Engineering (Class of 2026)',
+    focalPoint: 'center',
+    orientation: 'portrait',
+    isHero: false,
+  },
+  {
+    id: 'photo-festive',
+    src: '/photos/portrait-festive.jpg',
+    alt: 'Vishwaraj Algude — Festive Evening Celebration',
+    caption: 'Cultural Roots & Celebration · Akluj, Maharashtra, India',
+    focalPoint: 'center',
+    orientation: 'portrait',
+    isHero: false,
+  },
+  {
+    id: 'photo-outdoor',
+    src: '/photos/portrait-outdoor.jpg',
+    alt: 'Vishwaraj Algude — Outdoor Candid with Dog',
+    caption: 'Balance & Companionship · Nature, Open Skies & Loyal Companions',
+    focalPoint: 'center',
+    orientation: 'portrait',
+    isHero: false,
+  },
+  {
+    id: 'photo-fitness',
+    src: '/photos/portrait-fitness.jpg',
+    alt: 'Vishwaraj Algude — Physical Fitness & Athletic Discipline',
+    caption: 'Discipline, Consistency & Progression · The Real-World Foundation for FitVerse & GymPulse',
+    focalPoint: 'center',
+    orientation: 'portrait',
+    isHero: false,
+  },
+  {
+    id: 'photo-crimson',
+    src: '/photos/hero-crimson.png',
+    alt: 'Vishwaraj Algude — Studio Portrait with Crimson Lighting',
+    caption: 'Creative Persona & Modern Developer Vision · Think. Build. Create.',
+    focalPoint: 'center',
+    orientation: 'portrait',
+    isHero: true,
+  },
+  {
+    id: 'photo-street',
+    src: '/photos/photo-02.jpg',
+    alt: 'Vishwaraj Algude — Evening Casual Kurta Portrait',
+    caption: 'Engineering Curiosity & Continuous Improvement · Maharashtra, India',
+    focalPoint: 'center',
+    orientation: 'portrait',
+    isHero: false,
+  },
+];
