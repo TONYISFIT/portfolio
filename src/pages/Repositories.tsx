@@ -360,7 +360,7 @@ const RepoCard: React.FC<{ repo: GitHubRepoItem }> = ({ repo }) => {
             <span>{repo.name}</span>
             <ArrowUpRight className="h-3.5 w-3.5 opacity-60 group-hover:opacity-100 flex-shrink-0" />
           </a>
-          <span className="font-mono text-[10px] rounded border border-white/10 px-1.5 py-0.5 text-mutedGray uppercase flex-shrink-0">
+          <span className="font-mono text-xs rounded border border-white/10 px-1.5 py-0.5 text-mutedGray uppercase flex-shrink-0">
             {repo.visibility}
           </span>
         </div>
@@ -373,7 +373,7 @@ const RepoCard: React.FC<{ repo: GitHubRepoItem }> = ({ repo }) => {
         {/* Honest Note for clarity */}
         {repo.honestNote && (
           <div className="mb-4 rounded border border-antiqueGold/20 bg-antiqueGold/5 p-2.5 text-[11px] text-champagne/90 leading-relaxed font-sans">
-            <span className="font-semibold text-antiqueGold font-mono text-[10px] block uppercase mb-0.5">
+            <span className="font-semibold text-antiqueGold font-mono text-xs block uppercase mb-0.5">
               Repository Scope:
             </span>
             {repo.honestNote}
@@ -386,7 +386,7 @@ const RepoCard: React.FC<{ repo: GitHubRepoItem }> = ({ repo }) => {
             {repo.topics.slice(0, 4).map((topic) => (
               <span
                 key={topic}
-                className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-mutedGray"
+                className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-xs text-mutedGray"
               >
                 #{topic}
               </span>

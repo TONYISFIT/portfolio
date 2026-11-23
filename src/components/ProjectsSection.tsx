@@ -66,7 +66,7 @@ export const ProjectsSection: React.FC = () => {
                 {/* FitVerse Special Corner Banner */}
                 {isFitVerse && (
                   <div className="absolute top-0 right-0">
-                    <div className="bg-crimson px-5 py-1.5 rounded-bl-2xl font-mono text-[10px] uppercase font-bold tracking-widest text-white shadow-crimson-subtle flex items-center gap-1.5">
+                    <div className="bg-crimson px-5 py-1.5 rounded-bl-2xl font-mono text-xs uppercase font-bold tracking-widest text-white shadow-crimson-subtle flex items-center gap-1.5">
                       <Star className="h-3 w-3 fill-white text-white" />
                       <span>FLAGSHIP FULL-STACK PLATFORM</span>
                     </div>
@@ -88,7 +88,7 @@ export const ProjectsSection: React.FC = () => {
                     <span className="text-darkBorder">·</span>
                     <span
                       className={cn(
-                        'font-mono text-[10px] px-2.5 py-0.5 rounded-full border uppercase tracking-wider',
+                        'font-mono text-xs px-2.5 py-0.5 rounded-full border uppercase tracking-wider',
                         project.status === 'Completed'
                           ? 'bg-white/5 border-white/10 text-cream/80'
                           : 'bg-crimson/10 border-crimson/30 text-crimson font-semibold'
@@ -116,10 +116,10 @@ export const ProjectsSection: React.FC = () => {
                   {/* FitVerse Architecture Highlight */}
                   {project.rolesOverview && (
                     <div className="rounded-xl border border-crimson/25 bg-crimson/5 p-4 text-xs font-mono text-cream/90 space-y-1">
-                      <span className="font-bold text-crimson block uppercase tracking-wider text-[11px]">
+                      <span className="font-bold text-crimson block uppercase tracking-wider text-xs">
                         Multi-Role System Architecture:
                       </span>
-                      <p className="text-cream/80 text-[11px] leading-relaxed">
+                      <p className="text-cream/80 text-xs leading-relaxed">
                         {project.rolesOverview}
                       </p>
                     </div>
@@ -127,7 +127,7 @@ export const ProjectsSection: React.FC = () => {
 
                   {/* Technology Tags */}
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-mutedGray block mb-2 font-semibold">
+                    <span className="font-mono text-xs uppercase tracking-wider text-mutedGray block mb-2 font-semibold">
                       Tech Stack:
                     </span>
                     <div className="flex flex-wrap gap-2">
@@ -155,8 +155,9 @@ export const ProjectsSection: React.FC = () => {
                   {/* Action Buttons */}
                   <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-darkBorder/60">
                     <button
+                      type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="inline-flex items-center gap-2 rounded-xl bg-crimson px-5 py-3 font-mono text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-bright transition-all duration-200 shadow-crimson-subtle"
+                      className="inline-flex items-center gap-2 rounded-xl bg-crimson px-5 py-3 font-mono text-xs font-bold uppercase tracking-wider text-white hover:bg-crimson-bright focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-all duration-200 shadow-crimson-subtle"
                     >
                       <span>EXPLORE PROJECT METHODS</span>
                       <ArrowUpRight className="h-4 w-4" />
@@ -167,7 +168,7 @@ export const ProjectsSection: React.FC = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-xl border border-darkBorder bg-darkSurface px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-cream hover:border-crimson hover:text-white transition-all duration-200"
+                        className="inline-flex items-center gap-2 rounded-xl border border-darkBorder bg-darkSurface px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-cream hover:border-crimson hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-all duration-200"
                       >
                         <Github className="h-4 w-4 text-crimson" />
                         <span>GITHUB REPO</span>
@@ -181,7 +182,7 @@ export const ProjectsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right/Left Real Dashboard Screenshot Column */}
+                {/* Right/Left Screenshot or Clean Text-Only Architecture Card */}
                 <div
                   className={cn(
                     'lg:col-span-6 relative',
@@ -189,43 +190,94 @@ export const ProjectsSection: React.FC = () => {
                   )}
                 >
                   <div
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`View methodology and details for ${project.name}`}
                     onClick={() => {
-                      if (project.imageUrl) setPreviewImage(project.imageUrl);
+                      if (project.screenshot) setPreviewImage(project.screenshot);
                       else setSelectedProject(project);
                     }}
-                    className="group/img relative aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden border border-white/10 bg-darkSurface shadow-2xl cursor-pointer transition-all duration-500 hover:border-crimson hover:shadow-crimson-glow"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (project.screenshot) setPreviewImage(project.screenshot);
+                        else setSelectedProject(project);
+                      }
+                    }}
+                    className="group/img relative aspect-[16/10] sm:aspect-video rounded-2xl overflow-hidden border border-white/10 bg-darkSurface shadow-2xl cursor-pointer transition-all duration-500 hover:border-crimson hover:shadow-crimson-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson"
                   >
-                    {/* Real Image */}
-                    {project.imageUrl ? (
-                      <img
-                        src={project.imageUrl}
-                        alt={`${project.name} Dashboard Screenshot`}
-                        className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                    {project.screenshot ? (
+                      <>
+                        <img
+                          src={project.screenshot}
+                          alt={`${project.name} Screenshot`}
+                          className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-60 group-hover/img:opacity-30 transition-opacity" />
+                        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-darkBg/80 backdrop-blur-md px-3.5 py-2 border border-white/10 font-mono text-xs text-cream">
+                          <span className="text-crimson font-bold uppercase tracking-wider">
+                            {project.category.split('&')[0]}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-mutedGray group-hover/img:text-cream transition-colors">
+                            <Maximize2 className="h-3.5 w-3.5 text-crimson" />
+                            <span>CLICK TO ENLARGE</span>
+                          </span>
+                        </div>
+                      </>
                     ) : (
-                      <div className="h-full w-full flex flex-col items-center justify-center p-6 bg-darkBg text-center">
-                        <Layers className="h-12 w-12 text-crimson mb-3" />
-                        <span className="font-display text-sm font-bold text-cream uppercase">
-                          {project.name}
-                        </span>
+                      /* Clean Text-Only Card Style: Project Name, Tools Used, One-Line Outcome */
+                      <div className="h-full w-full flex flex-col justify-between p-6 sm:p-8 bg-gradient-to-br from-darkSurface via-[#141414] to-darkBg text-left relative select-none">
+                        {/* Background Subtle Tech Motif */}
+                        <div className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+
+                        {/* Top: Category Tag & Status */}
+                        <div className="flex items-center justify-between gap-3 relative z-10">
+                          <span className="inline-flex items-center gap-1.5 rounded-full border border-crimson/30 bg-crimson/10 px-3 py-1 font-mono text-xs font-bold text-crimson uppercase tracking-wider">
+                            <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                            <span>{project.category.split('&')[0].trim()}</span>
+                          </span>
+                          <span className="font-mono text-xs text-mutedGray flex items-center gap-1">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-crimson" />
+                            <span>{project.status}</span>
+                          </span>
+                        </div>
+
+                        {/* Middle: Project Name & One-Line Outcome */}
+                        <div className="my-auto py-2 relative z-10">
+                          <h4 className="font-display text-lg sm:text-2xl font-bold text-cream tracking-tight group-hover/img:text-crimson transition-colors leading-snug">
+                            {project.name.split('—')[0].trim()}
+                          </h4>
+                          <p className="mt-2 text-xs sm:text-sm text-cream/80 font-sans line-clamp-2 leading-relaxed">
+                            {project.shortDesc || project.objective}
+                          </p>
+                        </div>
+
+                        {/* Bottom: Tools Used & Action Cue */}
+                        <div className="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 relative z-10">
+                          <div className="flex flex-wrap gap-1.5 max-w-[75%]">
+                            {project.technologies.slice(0, 4).map((tech) => (
+                              <span
+                                key={tech}
+                                className="rounded border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-xs text-cream/90 font-medium"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                            {project.technologies.length > 4 && (
+                              <span className="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-xs text-mutedGray">
+                                +{project.technologies.length - 4}
+                              </span>
+                            )}
+                          </div>
+                          <span className="inline-flex items-center gap-1 font-mono text-xs text-crimson font-bold group-hover/img:translate-x-0.5 transition-transform">
+                            <span>DETAILS</span>
+                            <ArrowUpRight className="h-3.5 w-3.5" />
+                          </span>
+                        </div>
                       </div>
                     )}
-
-                    {/* Gradient Overlay for Cinematic Depth */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-60 group-hover/img:opacity-30 transition-opacity" />
-
-                    {/* Click to expand hover banner */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-darkBg/80 backdrop-blur-md px-3.5 py-2 border border-white/10 font-mono text-[10px] text-cream">
-                      <span className="text-crimson font-bold uppercase tracking-wider">
-                        {project.category.split('&')[0]}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-mutedGray group-hover/img:text-cream transition-colors">
-                        <Maximize2 className="h-3 w-3 text-crimson" />
-                        <span>CLICK TO ENLARGE</span>
-                      </span>
-                    </div>
                   </div>
                 </div>
 
@@ -262,8 +314,10 @@ export const ProjectsSection: React.FC = () => {
                 </h3>
               </div>
               <button
+                type="button"
+                aria-label="Close project modal"
                 onClick={() => setSelectedProject(null)}
-                className="rounded-full border border-darkBorder p-2 text-mutedGray hover:text-cream hover:border-crimson transition-colors"
+                className="rounded-full border border-darkBorder p-2 text-mutedGray hover:text-cream hover:border-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-colors"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -272,11 +326,11 @@ export const ProjectsSection: React.FC = () => {
             {/* Modal Body */}
             <div className="space-y-6 text-sm font-sans">
               
-              {/* Screenshot Preview */}
-              {selectedProject.imageUrl && (
+              {/* Screenshot Preview if available */}
+              {selectedProject.screenshot && (
                 <div className="rounded-xl overflow-hidden border border-darkBorder bg-darkSurface aspect-video">
                   <img
-                    src={selectedProject.imageUrl}
+                    src={selectedProject.screenshot}
                     alt={selectedProject.name}
                     className="w-full h-full object-cover object-top"
                   />

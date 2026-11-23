@@ -10,7 +10,7 @@ export const projectsData: ProjectItem[] = [
     isFeatured: true,
     isFlagship: true,
     isFavorite: true,
-    imageUrl: '/projects/fitverse-dashboard.jpg',
+    screenshot: undefined,
     shortDesc:
       'A fitness management platform that combines workout tracking, diet planning, fitness progress monitoring and personalized activity management into one interactive platform.',
     problem:
@@ -63,7 +63,7 @@ export const projectsData: ProjectItem[] = [
     category: 'Data Analytics & Business Intelligence',
     status: 'Completed',
     isFeatured: true,
-    imageUrl: '/projects/ecommerce-dashboard.jpg',
+    screenshot: undefined,
     shortDesc:
       'End-to-end commercial analytics pipeline utilizing SQL, Excel, Python, and Power BI to analyze business performance, customer RFM cohorts, and revenue growth.',
     problem:
@@ -114,7 +114,7 @@ export const projectsData: ProjectItem[] = [
     category: 'Business Intelligence & Facility Management',
     status: 'Completed',
     isFeatured: true,
-    imageUrl: '/projects/gympulse-dashboard.jpg',
+    screenshot: undefined,
     shortDesc:
       'A gym management and fitness analytics project tracking member retention, attendance trends, facility utilization, and subscription renewals.',
     problem:
@@ -148,8 +148,8 @@ export const projectsData: ProjectItem[] = [
     architectureOrHighlights: [
       'Member Logs -> Python ETL -> SQL Analytical Views -> Power BI Dashboard',
     ],
-    githubUrl: 'https://github.com/TONYISFIT',
-    githubLabel: 'View on GitHub Profile',
+    githubUrl: undefined,
+    githubLabel: undefined,
   },
 
   // 04: IPL ANALYTICS & BUSINESS INTELLIGENCE DASHBOARD
@@ -159,7 +159,7 @@ export const projectsData: ProjectItem[] = [
     category: 'Sports Analytics & Exploratory Data Analysis',
     status: 'Completed',
     isFeatured: true,
-    imageUrl: '/projects/ipl-dashboard.jpg',
+    screenshot: undefined,
     shortDesc:
       'Comprehensive multi-season Indian Premier League analytics dashboard turning ball-by-ball and match telemetry into interactive strategic insights.',
     problem:
@@ -194,8 +194,8 @@ export const projectsData: ProjectItem[] = [
     architectureOrHighlights: [
       'Kaggle Multi-Season Data -> Power Query Normalization -> DAX Measures -> Power BI Visuals',
     ],
-    githubUrl: 'https://github.com/TONYISFIT',
-    githubLabel: 'View on GitHub Profile',
+    githubUrl: undefined,
+    githubLabel: undefined,
   },
 
   // 05: CUSTOMER CHURN PREDICTION AND RETENTION INTELLIGENCE
@@ -205,7 +205,7 @@ export const projectsData: ProjectItem[] = [
     category: 'Machine Learning & Predictive Analytics',
     status: 'Completed',
     isFeatured: true,
-    imageUrl: '/projects/churn-dashboard.jpg',
+    screenshot: undefined,
     shortDesc:
       'Supervised classification pipeline identifying at-risk subscription customers using Scikit-learn, XGBoost, and SHAP explainability.',
     problem:
@@ -256,7 +256,7 @@ export const projectsData: ProjectItem[] = [
     category: 'Automation & Software Testing',
     status: 'Completed',
     isFeatured: true,
-    imageUrl: '/projects/qa-dashboard.jpg',
+    screenshot: undefined,
     shortDesc:
       'Production-style automated testing framework utilizing Selenium WebDriver, PyTest, Page Object Model, API validation, and database assertions.',
     problem:

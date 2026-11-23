@@ -44,8 +44,17 @@ export const MomentsStrip: React.FC = () => {
           {photosData.map((photo, idx) => (
             <div
               key={photo.id}
+              tabIndex={0}
+              role="button"
+              aria-label={`View photo ${photo.alt}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  openLightboxAt(idx);
+                }
+              }}
               onClick={() => openLightboxAt(idx)}
-              className="group relative rounded-2xl overflow-hidden border border-darkBorder bg-darkCard shadow-editorial-card cursor-pointer transition-all duration-300 hover:border-crimson hover:shadow-crimson-subtle flex flex-col justify-between"
+              className="group relative rounded-2xl overflow-hidden border border-darkBorder bg-darkCard shadow-editorial-card cursor-pointer transition-all duration-300 hover:border-crimson hover:shadow-crimson-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson flex flex-col justify-between"
             >
               {/* Photo Frame */}
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-darkSurface">
@@ -68,7 +77,7 @@ export const MomentsStrip: React.FC = () => {
 
               {/* Caption & Metadata Footer with Custom Category Name (formal, gym, companionship) */}
               <div className="p-4 bg-darkCard border-t border-darkBorder/60 space-y-1">
-                <div className="flex items-center justify-between text-[10px] font-mono">
+                <div className="flex items-center justify-between text-xs font-mono">
                   <span className="text-crimson font-bold uppercase tracking-wider">
                     0{idx + 1} // {photo.tag || 'FEATURED'}
                   </span>

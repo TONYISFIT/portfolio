@@ -85,7 +85,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResume }) =>
                       Tailored Resumes Available
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] uppercase text-mutedGray">
+                  <span className="font-mono text-xs uppercase text-mutedGray">
                     PDF FORMAT
                   </span>
                 </div>
@@ -94,14 +94,23 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResume }) =>
                   {roles.map((r) => (
                     <div
                       key={r.title}
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Open resume for ${r.title}`}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          onOpenResume();
+                        }
+                      }}
                       onClick={onOpenResume}
-                      className="cursor-pointer group flex items-center justify-between p-2.5 rounded-lg border border-darkBorder bg-darkCard/50 hover:border-crimson hover:bg-crimson/5 transition-all duration-200"
+                      className="cursor-pointer group flex items-center justify-between p-2.5 rounded-lg border border-darkBorder bg-darkCard/50 hover:border-crimson hover:bg-crimson/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-all duration-200"
                     >
                       <div>
                         <p className="font-display text-xs font-bold text-cream group-hover:text-white">
                           {r.title}
                         </p>
-                        <p className="font-mono text-[10px] text-mutedGray group-hover:text-crimson transition-colors">
+                        <p className="font-mono text-xs text-mutedGray group-hover:text-crimson transition-colors">
                           {r.tag}
                         </p>
                       </div>

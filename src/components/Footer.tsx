@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/resumes" className="hover:text-antiqueGold transition-colors flex items-center gap-1.5 font-bold text-champagne">
                   <FileText className="h-3.5 w-3.5 text-antiqueGold" />
-                  <span>Resume Centre (9 Roles)</span>
+                  <span>Resume Centre (6 Roles)</span>
                 </Link>
               </li>
               <li>
@@ -87,7 +87,8 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href={`mailto:${profileData.contact.email}`}
-                  className="flex items-center gap-2 text-warmWhite hover:text-antiqueGold transition-colors group"
+                  aria-label="Send email to Vishwaraj Algude"
+                  className="flex items-center gap-2 text-warmWhite hover:text-antiqueGold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold rounded transition-colors group"
                 >
                   <Mail className="h-4 w-4 text-antiqueGold" />
                   <span>{profileData.contact.email}</span>
@@ -97,7 +98,8 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href={`tel:${profileData.contact.phone.replace(/\s+/g, '')}`}
-                  className="flex items-center gap-2 text-warmWhite hover:text-antiqueGold transition-colors group"
+                  aria-label="Call Vishwaraj Algude"
+                  className="flex items-center gap-2 text-warmWhite hover:text-antiqueGold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold rounded transition-colors group"
                 >
                   <Phone className="h-4 w-4 text-antiqueGold" />
                   <span>{profileData.contact.phoneDisplay}</span>

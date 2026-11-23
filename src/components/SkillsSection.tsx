@@ -120,7 +120,7 @@ export const SkillsSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-mutedGray">
+              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between font-mono text-xs text-mutedGray">
                 <span className="uppercase text-crimson/80">{skill.category}</span>
                 <span className="flex items-center gap-1">
                   <CheckCircle className="h-3 w-3 text-crimson" />

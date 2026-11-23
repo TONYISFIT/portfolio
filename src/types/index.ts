@@ -93,6 +93,7 @@ export interface ProjectItem {
   isFlagship?: boolean;
   shortDesc?: string;
   imageUrl?: string;
+  screenshot?: string;
   problem: string;
   objective: string;
   technologies: string[];

@@ -124,7 +124,7 @@ export const EducationSection: React.FC = () => {
             <div className="flex-1 rounded-2xl border border-darkBorder bg-darkCard p-6 sm:p-7 transition-all duration-300 hover:border-crimson hover:shadow-crimson-subtle flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-crimson font-bold">
+                  <span className="font-mono text-xs uppercase tracking-wider text-crimson font-bold">
                     HIGHER SECONDARY (12TH)
                   </span>
                   <span className="font-display text-lg font-black text-cream">
@@ -149,7 +149,7 @@ export const EducationSection: React.FC = () => {
             <div className="flex-1 rounded-2xl border border-darkBorder bg-darkCard p-6 sm:p-7 transition-all duration-300 hover:border-crimson hover:shadow-crimson-subtle flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-crimson font-bold">
+                  <span className="font-mono text-xs uppercase tracking-wider text-crimson font-bold">
                     SECONDARY SCHOOL (10TH)
                   </span>
                   <span className="font-display text-lg font-black text-cream">

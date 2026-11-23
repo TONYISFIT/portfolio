@@ -183,7 +183,7 @@ export const Career: React.FC = () => {
                       ))}
                     </ul>
                   </div>
-                  <span className="mt-3 font-mono text-[10px] text-antiqueGold/70">
+                  <span className="mt-3 font-mono text-xs text-antiqueGold/70">
                     Verified in active projects
                   </span>
                 </div>
@@ -204,7 +204,7 @@ export const Career: React.FC = () => {
                       ))}
                     </ul>
                   </div>
-                  <span className="mt-3 font-mono text-[10px] text-champagne/70">
+                  <span className="mt-3 font-mono text-xs text-champagne/70">
                     Grounded in practice
                   </span>
                 </div>
@@ -225,7 +225,7 @@ export const Career: React.FC = () => {
                       ))}
                     </ul>
                   </div>
-                  <span className="mt-3 font-mono text-[10px] text-auroraTeal/70">
+                  <span className="mt-3 font-mono text-xs text-auroraTeal/70">
                     Active self-study & builds
                   </span>
                 </div>
@@ -246,7 +246,7 @@ export const Career: React.FC = () => {
                       ))}
                     </ul>
                   </div>
-                  <span className="mt-3 font-mono text-[10px] text-mutedIndigo/70">
+                  <span className="mt-3 font-mono text-xs text-mutedIndigo/70">
                     Adaptable upon onboarding
                   </span>
                 </div>

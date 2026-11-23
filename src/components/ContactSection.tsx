@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   AlertCircle,
   Copy,
+  Check,
   ExternalLink,
 } from 'lucide-react';
 
@@ -126,30 +127,39 @@ export const ContactSection: React.FC = () => {
 
               <div className="space-y-4">
                 {/* Email Item */}
-                <div className="flex items-start gap-4 p-3.5 rounded-2xl border border-darkBorder bg-darkSurface">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-darkBorder bg-darkCard text-crimson">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <span className="font-mono text-[10px] uppercase text-mutedGray block">
-                      EMAIL ADDRESS
-                    </span>
-                    <a
-                      href={`mailto:${contact.email}`}
-                      className="font-mono text-sm text-cream hover:text-crimson transition-colors truncate block font-medium"
-                    >
-                      {contact.email}
-                    </a>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-2xl border border-darkBorder bg-darkSurface">
+                  <div className="flex items-start gap-4 min-w-0">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-darkBorder bg-darkCard text-crimson">
+                      <Mail className="h-5 w-5" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <span className="font-mono text-xs uppercase text-mutedGray block">
+                        EMAIL ADDRESS
+                      </span>
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="font-mono text-sm text-cream hover:text-crimson transition-colors truncate block font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson rounded"
+                      >
+                        {contact.email}
+                      </a>
+                    </div>
                   </div>
                   <button
+                    type="button"
                     onClick={handleCopyEmail}
-                    title="Copy Email"
-                    className="shrink-0 p-2 text-mutedGray hover:text-cream transition-colors"
+                    aria-label="Copy email address to clipboard"
+                    className="inline-flex items-center gap-1.5 self-start sm:self-center px-3 py-1.5 rounded-lg border border-darkBorder bg-darkCard text-xs font-mono text-cream hover:text-white hover:border-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-all shrink-0"
                   >
                     {copied ? (
-                      <span className="font-mono text-[10px] text-crimson font-bold">COPIED</span>
+                      <>
+                        <Check className="h-3.5 w-3.5 text-crimson" />
+                        <span className="font-bold text-crimson">Copied</span>
+                      </>
                     ) : (
-                      <Copy className="h-4 w-4" />
+                      <>
+                        <Copy className="h-3.5 w-3.5 text-mutedGray" />
+                        <span>Copy email</span>
+                      </>
                     )}
                   </button>
                 </div>
@@ -160,12 +170,12 @@ export const ContactSection: React.FC = () => {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="font-mono text-[10px] uppercase text-mutedGray block">
+                    <span className="font-mono text-xs uppercase text-mutedGray block">
                       PHONE NUMBER
                     </span>
                     <a
                       href={`tel:${contact.phone}`}
-                      className="font-mono text-sm text-cream hover:text-crimson transition-colors truncate block font-medium"
+                      className="font-mono text-sm text-cream hover:text-crimson transition-colors truncate block font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson rounded"
                     >
                       {contact.phoneDisplay}
                     </a>
@@ -178,7 +188,7 @@ export const ContactSection: React.FC = () => {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="font-mono text-[10px] uppercase text-mutedGray block">
+                    <span className="font-mono text-xs uppercase text-mutedGray block">
                       LOCATION
                     </span>
                     <span className="font-mono text-sm text-cream font-medium">
@@ -198,7 +208,7 @@ export const ContactSection: React.FC = () => {
                     href={contact.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-darkBorder bg-darkSurface px-4 py-2.5 font-mono text-xs text-cream hover:border-crimson hover:text-white transition-all duration-200"
+                    className="inline-flex items-center gap-2 rounded-xl border border-darkBorder bg-darkSurface px-4 py-2.5 font-mono text-xs text-cream hover:border-crimson hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-all duration-200"
                   >
                     <Github className="h-4 w-4 text-crimson" />
                     <span>GitHub Profile</span>
@@ -209,7 +219,7 @@ export const ContactSection: React.FC = () => {
                     href={contact.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-darkBorder bg-darkSurface px-4 py-2.5 font-mono text-xs text-cream hover:border-crimson hover:text-white transition-all duration-200"
+                    className="inline-flex items-center gap-2 rounded-xl border border-darkBorder bg-darkSurface px-4 py-2.5 font-mono text-xs text-cream hover:border-crimson hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-all duration-200"
                   >
                     <Linkedin className="h-4 w-4 text-crimson" />
                     <span>LinkedIn Profile</span>
@@ -338,7 +348,7 @@ export const ContactSection: React.FC = () => {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2.5 rounded-xl bg-crimson px-7 py-4 font-mono text-xs uppercase tracking-wider font-bold text-white transition-all duration-300 hover:bg-crimson-bright hover:shadow-crimson-glow"
+                  className="w-full inline-flex items-center justify-center gap-2.5 rounded-xl bg-crimson px-7 py-4 font-mono text-xs uppercase tracking-wider font-bold text-white transition-all duration-300 hover:bg-crimson-bright hover:shadow-crimson-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson"
                 >
                   <Send className="h-4 w-4" />
                   <span>COMPOSE MESSAGE</span>

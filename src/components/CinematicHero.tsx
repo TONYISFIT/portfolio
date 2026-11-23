@@ -195,19 +195,20 @@ export const CinematicHero: React.FC = () => {
               {/* Foreground Overlay Labels */}
               <div className="absolute bottom-4 left-4 right-4 z-30 flex items-end justify-between">
                 <div className="rounded-lg bg-midnight/80 backdrop-blur-md border border-white/10 px-3 py-1.5">
-                  <p className="font-display text-[10px] uppercase font-bold text-warmWhite">
+                  <p className="font-display text-xs uppercase font-bold text-warmWhite">
                     Vishwaraj Algude
                   </p>
-                  <p className="font-mono text-[9px] text-champagne">
+                  <p className="font-mono text-xs text-champagne">
                     SMSMPITR · DBATU Lonere
                   </p>
                 </div>
 
                 {/* Slideshow Control */}
                 <button
+                  type="button"
                   onClick={() => setIsPlaying(!isPlaying)}
                   aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-midnight/80 border border-antiqueGold/40 text-champagne hover:text-warmWhite backdrop-blur-md"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-midnight/80 border border-antiqueGold/40 text-champagne hover:text-warmWhite backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold"
                 >
                   {isPlaying ? <Pause className="h-3 w-3" /> : <Play className="h-3 w-3" />}
                 </button>

@@ -161,7 +161,7 @@ export const ResumeCentre: React.FC = () => {
       {/* Header */}
       <SectionHeader
         badge="Resume Architecture"
-        title="Resume Centre (9 Role-Specific Formats)"
+        title="Resume Centre (6 Available Formats)"
         subtitle="Dedicated resume variations tailored for specific career tracks. Supports instant PDF upload persisted with IndexedDB, live document preview drawer, version tracking, and direct download."
       />
 
@@ -169,7 +169,7 @@ export const ResumeCentre: React.FC = () => {
       <div className="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
         <div className="flex flex-wrap gap-2">
           {[
-            { id: 'all', label: 'All 9 Resumes' },
+            { id: 'all', label: 'All Roles (6 Uploaded)' },
             { id: 'available', label: 'Files Ready (6)' },
             { id: 'awaiting', label: 'Awaiting Upload (3)' },
           ].map((tab) => (
@@ -216,7 +216,7 @@ export const ResumeCentre: React.FC = () => {
 
                   <div className="flex items-center gap-1.5">
                     {resume.isPreferred && (
-                      <span className="inline-flex items-center gap-1 rounded bg-antiqueGold/20 px-2 py-0.5 font-mono text-[10px] font-bold text-antiqueGold">
+                      <span className="inline-flex items-center gap-1 rounded bg-antiqueGold/20 px-2 py-0.5 font-mono text-xs font-bold text-antiqueGold">
                         <Star className="h-3 w-3 fill-antiqueGold text-antiqueGold" />
                         Preferred
                       </span>
@@ -248,14 +248,14 @@ export const ResumeCentre: React.FC = () => {
 
                 {/* Key Skills Highlighted */}
                 <div className="mt-4 pt-3 border-t border-white/5">
-                  <p className="font-mono text-[10px] text-antiqueGold uppercase tracking-wider mb-2">
+                  <p className="font-mono text-xs text-antiqueGold uppercase tracking-wider mb-2">
                     Key Competencies Highlighted:
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {resume.keySkillsHighlighted.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-champagne"
+                        className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-xs text-champagne"
                       >
                         {skill}
                       </span>

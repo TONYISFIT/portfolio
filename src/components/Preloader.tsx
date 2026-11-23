@@ -7,7 +7,12 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    if (reducedMotion) {
+    const isMotionReduced =
+      reducedMotion ||
+      (typeof window !== 'undefined' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+    if (isMotionReduced) {
       onComplete();
       return;
     }
@@ -16,23 +21,28 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
       setPercent((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(() => setIsFadingOut(true), 150);
-          setTimeout(() => onComplete(), 550);
+          setTimeout(() => setIsFadingOut(true), 80);
+          setTimeout(() => onComplete(), 280);
           return 100;
         }
-        const jump = Math.floor(Math.random() * 8) + 4;
+        const jump = Math.floor(Math.random() * 16) + 12;
         return Math.min(100, prev + jump);
       });
-    }, 40);
+    }, 20);
 
     return () => clearInterval(interval);
   }, [reducedMotion, onComplete]);
 
-  if (reducedMotion) return null;
+  const isMotionReduced =
+    reducedMotion ||
+    (typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  if (isMotionReduced) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-between bg-darkBg px-6 py-12 transition-opacity duration-500 select-none ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-between bg-darkBg px-6 py-12 transition-opacity duration-200 select-none ${
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >

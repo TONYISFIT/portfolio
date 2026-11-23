@@ -118,71 +118,85 @@ export const Contact: React.FC = () => {
 
             <div className="space-y-6">
               {/* Email */}
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-start gap-3.5">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-antiqueGold/40 bg-antiqueGold/10 text-antiqueGold flex-shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-mutedIndigo">
+                    <span className="font-mono text-xs uppercase tracking-wider text-mutedIndigo block">
                       Personal & Professional Email
                     </span>
                     <a
                       href={`mailto:${profileData.contact.email}`}
-                      className="block font-sans text-base font-bold text-warmWhite hover:text-antiqueGold transition-colors"
+                      className="block font-sans text-base font-bold text-warmWhite hover:text-antiqueGold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold rounded"
                     >
                       {profileData.contact.email}
                     </a>
-                    <span className="text-[11px] text-auroraTeal font-mono">
+                    <span className="text-xs text-auroraTeal font-mono">
                       Click to launch default mail app
                     </span>
                   </div>
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => handleCopy(profileData.contact.email, 'email')}
-                  title="Copy email to clipboard"
-                  className="rounded-lg border border-white/10 p-2 text-mutedIndigo hover:text-antiqueGold hover:border-antiqueGold transition-colors"
+                  aria-label="Copy email to clipboard"
+                  className="inline-flex items-center gap-1.5 self-start sm:self-center rounded-lg border border-white/10 bg-midnight px-2.5 py-1.5 text-xs font-mono text-warmWhite hover:text-antiqueGold hover:border-antiqueGold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold transition-colors"
                 >
                   {copiedField === 'email' ? (
-                    <Check className="h-4 w-4 text-auroraTeal" />
+                    <>
+                      <Check className="h-3.5 w-3.5 text-auroraTeal" />
+                      <span className="text-auroraTeal font-bold">Copied</span>
+                    </>
                   ) : (
-                    <Copy className="h-4 w-4" />
+                    <>
+                      <Copy className="h-3.5 w-3.5 text-mutedIndigo" />
+                      <span>Copy email</span>
+                    </>
                   )}
                 </button>
               </div>
 
               {/* Phone */}
-              <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-start gap-3.5">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-antiqueGold/40 bg-antiqueGold/10 text-antiqueGold flex-shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-mutedIndigo">
+                    <span className="font-mono text-xs uppercase tracking-wider text-mutedIndigo block">
                       Direct Mobile (Public Display)
                     </span>
                     <a
                       href={`tel:${profileData.contact.phone.replace(/\s+/g, '')}`}
-                      className="block font-sans text-base font-bold text-warmWhite hover:text-antiqueGold transition-colors"
+                      className="block font-sans text-base font-bold text-warmWhite hover:text-antiqueGold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold rounded"
                     >
                       {profileData.contact.phoneDisplay}
                     </a>
-                    <span className="text-[11px] text-auroraTeal font-mono">
+                    <span className="text-xs text-auroraTeal font-mono">
                       tel:+917770052955
                     </span>
                   </div>
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => handleCopy(profileData.contact.phone, 'phone')}
-                  title="Copy phone to clipboard"
-                  className="rounded-lg border border-white/10 p-2 text-mutedIndigo hover:text-antiqueGold hover:border-antiqueGold transition-colors"
+                  aria-label="Copy phone to clipboard"
+                  className="inline-flex items-center gap-1.5 self-start sm:self-center rounded-lg border border-white/10 bg-midnight px-2.5 py-1.5 text-xs font-mono text-warmWhite hover:text-antiqueGold hover:border-antiqueGold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold transition-colors"
                 >
                   {copiedField === 'phone' ? (
-                    <Check className="h-4 w-4 text-auroraTeal" />
+                    <>
+                      <Check className="h-3.5 w-3.5 text-auroraTeal" />
+                      <span className="text-auroraTeal font-bold">Copied</span>
+                    </>
                   ) : (
-                    <Copy className="h-4 w-4" />
+                    <>
+                      <Copy className="h-3.5 w-3.5 text-mutedIndigo" />
+                      <span>Copy phone</span>
+                    </>
                   )}
                 </button>
               </div>
@@ -269,7 +283,7 @@ export const Contact: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <FileText className="h-5 w-5 text-antiqueGold flex-shrink-0" />
                   <div>
-                    <p className="font-mono text-[10px] uppercase text-antiqueGold tracking-wider">
+                    <p className="font-mono text-xs uppercase text-antiqueGold tracking-wider">
                       Recommended Resume For Position:
                     </p>
                     <p className="font-sans text-xs font-bold text-warmWhite">
@@ -284,7 +298,7 @@ export const Contact: React.FC = () => {
                       href={recommendedResume.filePath}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 rounded border border-white/20 px-2.5 py-1 font-mono text-[11px] text-mutedIndigo hover:text-champagne transition-colors"
+                      className="inline-flex items-center gap-1 rounded border border-white/20 px-2.5 py-1 font-mono text-xs text-mutedIndigo hover:text-champagne transition-colors"
                     >
                       <Eye className="h-3 w-3" />
                       <span>Preview</span>
@@ -292,14 +306,14 @@ export const Contact: React.FC = () => {
                     <a
                       href={recommendedResume.filePath}
                       download={recommendedResume.fileName || `${recommendedResume.slug}.pdf`}
-                      className="inline-flex items-center gap-1 rounded bg-antiqueGold px-3 py-1 font-mono text-[11px] font-bold text-midnight hover:bg-champagne transition-colors shadow-gold-glow"
+                      className="inline-flex items-center gap-1 rounded bg-antiqueGold px-3 py-1 font-mono text-xs font-bold text-midnight hover:bg-champagne transition-colors shadow-gold-glow"
                     >
                       <Download className="h-3 w-3" />
                       <span>Download PDF</span>
                     </a>
                   </div>
                 ) : (
-                  <span className="font-mono text-[10px] text-mutedIndigo">
+                  <span className="font-mono text-xs text-mutedIndigo">
                     Awaiting Upload
                   </span>
                 )}

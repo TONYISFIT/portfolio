@@ -63,7 +63,7 @@ export const Projects: React.FC = () => {
             key={tab.id}
             onClick={() => setSelectedFilter(tab.id)}
             className={cn(
-              'rounded-lg px-4 py-2 font-mono text-xs transition-colors',
+              'rounded-lg px-4 py-2 font-mono text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold',
               selectedFilter === tab.id
                 ? 'bg-antiqueGold text-richBlack font-bold shadow-gold-glow'
                 : 'bg-cardDark/60 text-mutedGray hover:text-champagne hover:bg-cardDark'

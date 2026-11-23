@@ -197,7 +197,7 @@ export const Skills: React.FC = () => {
                     {/* Linked project evidence */}
                     {skill.relatedProjectId && (
                       <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                        <span className="font-mono text-[10px] text-antiqueGold/80 uppercase tracking-wider">
+                        <span className="font-mono text-xs text-antiqueGold/80 uppercase tracking-wider">
                           Project Evidence:
                         </span>
                         <Link

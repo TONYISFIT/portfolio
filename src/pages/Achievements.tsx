@@ -106,7 +106,7 @@ export const Achievements: React.FC = () => {
               className="rounded-xl border border-white/10 bg-richBlack/50 p-5 flex flex-col justify-between"
             >
               <div>
-                <span className="inline-block rounded border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 font-mono text-[10px] text-amber-300 uppercase mb-3">
+                <span className="inline-block rounded border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 font-mono text-xs text-amber-300 uppercase mb-3">
                   {item.yearOrStatus}
                 </span>
                 <h4 className="font-serif text-sm font-semibold text-warmWhite">

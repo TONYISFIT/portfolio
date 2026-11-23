@@ -141,7 +141,7 @@ export const About: React.FC = () => {
               </button>
             </div>
 
-            <p className="font-mono text-[10px] text-mutedIndigo mt-4">
+            <p className="font-mono text-xs text-mutedIndigo mt-4">
               Use <kbd className="rounded border px-1">←</kbd> and <kbd className="rounded border px-1">→</kbd> arrow keys to navigate.
             </p>
           </div>
@@ -195,7 +195,7 @@ export const About: React.FC = () => {
                     <span className="font-display text-xs font-bold uppercase tracking-wider text-antiqueGold">
                       {block.label}
                     </span>
-                    <span className="font-mono text-[10px] text-mutedIndigo">
+                    <span className="font-mono text-xs text-mutedIndigo">
                       {block.tag}
                     </span>
                   </div>
@@ -233,11 +233,21 @@ export const About: React.FC = () => {
           {photosData.map((photo, idx) => (
             <div
               key={photo.id}
+              tabIndex={0}
+              role="button"
+              aria-label={`View photo ${photo.alt}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedPhotoIndex(idx);
+                  setLightboxOpen(true);
+                }
+              }}
               onClick={() => {
                 setSelectedPhotoIndex(idx);
                 setLightboxOpen(true);
               }}
-              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-plum/40 shadow-indigo-card cursor-pointer transition-all duration-300 hover:border-antiqueGold/60 hover:shadow-gold-glow flex flex-col justify-between"
+              className="group relative rounded-2xl overflow-hidden border border-white/10 bg-plum/40 shadow-indigo-card cursor-pointer transition-all duration-300 hover:border-antiqueGold/60 hover:shadow-gold-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antiqueGold flex flex-col justify-between"
             >
               {/* Photo Frame */}
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-midnight">
@@ -260,7 +270,7 @@ export const About: React.FC = () => {
 
               {/* Caption & Metadata Footer with Custom Category Name (formal, gym, companionship) */}
               <div className="p-4 bg-plum/70 border-t border-white/10 space-y-1">
-                <div className="flex items-center justify-between text-[10px] font-mono">
+                <div className="flex items-center justify-between text-xs font-mono">
                   <span className="text-antiqueGold font-bold uppercase tracking-wider">
                     0{idx + 1} // {photo.tag || 'FEATURED'}
                   </span>

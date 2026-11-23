@@ -122,7 +122,7 @@ export const AboutSection: React.FC = () => {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-darkBg via-transparent to-transparent opacity-80" />
                 
                 {/* Frame Badge */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between border-t border-white/10 pt-3 font-mono text-[10px]">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between border-t border-white/10 pt-3 font-mono text-xs">
                   <span className="text-crimson font-bold">AKLUJ, MAHARASHTRA</span>
                   <span className="text-mutedGray">02 // PROFILE</span>
                 </div>
@@ -149,19 +149,19 @@ export const AboutSection: React.FC = () => {
               {/* Information Block */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-xl border border-darkBorder bg-darkCard font-mono text-xs">
                 <div>
-                  <span className="text-crimson block font-bold text-[10px] uppercase mb-1">DEGREE</span>
+                  <span className="text-crimson block font-bold text-xs uppercase mb-1">DEGREE</span>
                   <span className="text-cream font-medium">B.Tech in CSE</span>
                 </div>
                 <div>
-                  <span className="text-crimson block font-bold text-[10px] uppercase mb-1">EXPERIENCE</span>
+                  <span className="text-crimson block font-bold text-xs uppercase mb-1">EXPERIENCE</span>
                   <span className="text-cream font-medium">Fresher / Junior</span>
                 </div>
                 <div>
-                  <span className="text-crimson block font-bold text-[10px] uppercase mb-1">LOCATION</span>
+                  <span className="text-crimson block font-bold text-xs uppercase mb-1">LOCATION</span>
                   <span className="text-cream font-medium">Maharashtra, India</span>
                 </div>
                 <div>
-                  <span className="text-crimson block font-bold text-[10px] uppercase mb-1">CAREER STATUS</span>
+                  <span className="text-crimson block font-bold text-xs uppercase mb-1">CAREER STATUS</span>
                   <span className="text-crimson-bright font-medium">Open to Offers</span>
                 </div>
               </div>
@@ -188,7 +188,7 @@ export const AboutSection: React.FC = () => {
                   <span className="font-display text-xl font-bold tracking-tight text-cream">
                     Vishwaraj Algude
                   </span>
-                  <span className="block font-mono text-[10px] text-mutedGray">
+                  <span className="block font-mono text-xs text-mutedGray">
                     Software Developer & Data Analyst (Fresher)
                   </span>
                 </div>

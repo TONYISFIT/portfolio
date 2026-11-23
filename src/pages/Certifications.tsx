@@ -73,14 +73,14 @@ export const Certifications: React.FC = () => {
               {/* Skills covered */}
               {cert.skillsCovered && cert.skillsCovered.length > 0 && (
                 <div className="mt-5 pt-4 border-t border-white/10">
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-mutedGray mb-2">
+                  <p className="font-mono text-xs uppercase tracking-wider text-mutedGray mb-2">
                     Core Focus Areas
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {cert.skillsCovered.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-mutedGray"
+                        className="rounded border border-white/5 bg-white/5 px-2 py-0.5 font-mono text-xs text-mutedGray"
                       >
                         {skill}
                       </span>

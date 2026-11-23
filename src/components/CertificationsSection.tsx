@@ -77,7 +77,7 @@ export const CertificationsSection: React.FC = () => {
               <div>
                 {/* Header badge */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="rounded-md border border-crimson/30 bg-crimson/10 px-2.5 py-1 font-mono text-[10px] text-crimson uppercase tracking-wider font-semibold">
+                  <span className="rounded-md border border-crimson/30 bg-crimson/10 px-2.5 py-1 font-mono text-xs text-crimson uppercase tracking-wider font-semibold">
                     {cert.category}
                   </span>
                   <Award className="h-4 w-4 text-mutedGray group-hover:text-crimson transition-colors" />
@@ -93,7 +93,7 @@ export const CertificationsSection: React.FC = () => {
 
                 {/* Skills covered */}
                 <div className="space-y-2 pt-4 border-t border-darkBorder">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-mutedGray block mb-2 font-semibold">
+                  <span className="font-mono text-xs uppercase tracking-wider text-mutedGray block mb-2 font-semibold">
                     Core Competencies Covered:
                   </span>
                   <div className="flex flex-wrap gap-1.5">

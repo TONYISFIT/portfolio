@@ -59,7 +59,7 @@ export const FooterSection: React.FC = () => {
           {/* Closing Editorial Quote */}
           <div className="md:col-span-3 flex flex-col justify-between h-full space-y-4">
             <div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-crimson font-bold block mb-1">
+              <span className="font-mono text-xs uppercase tracking-widest text-crimson font-bold block mb-1">
                 CREATIVE CREED
               </span>
               <p className="font-display text-sm font-bold uppercase tracking-wider text-cream leading-snug">
@@ -73,7 +73,8 @@ export const FooterSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub"
-                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson transition-colors"
+                aria-label="GitHub Profile"
+                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-colors"
               >
                 <Github className="h-4 w-4" />
               </a>
@@ -82,21 +83,24 @@ export const FooterSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="LinkedIn"
-                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson transition-colors"
+                aria-label="LinkedIn Profile"
+                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-colors"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${profileData.contact.email}`}
                 title="Email"
-                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson transition-colors"
+                aria-label="Send email to Vishwaraj Algude"
+                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-colors"
               >
                 <Mail className="h-4 w-4" />
               </a>
               <a
                 href={`tel:${profileData.contact.phone}`}
                 title="Phone"
-                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson transition-colors"
+                aria-label="Call Vishwaraj Algude"
+                className="p-2 rounded-lg border border-darkBorder bg-darkCard hover:text-crimson hover:border-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson transition-colors"
               >
                 <Phone className="h-4 w-4" />
               </a>

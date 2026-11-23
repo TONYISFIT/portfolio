@@ -152,10 +152,10 @@ export const HeroSection: React.FC<{ onOpenResume: () => void }> = ({ onOpenResu
 
               {/* Bottom Editorial Caption */}
               <div className="absolute bottom-4 left-4 right-4 z-30 flex items-center justify-between border-t border-white/10 pt-3">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-crimson font-bold uppercase">
+                <span className="font-mono text-xs tracking-[0.2em] text-crimson font-bold uppercase">
                   THINK. BUILD. CREATE.
                 </span>
-                <span className="font-mono text-[9px] text-mutedGray">
+                <span className="font-mono text-xs text-mutedGray">
                   01 // CSE FRESHER
                 </span>
               </div>
@@ -167,9 +167,9 @@ export const HeroSection: React.FC<{ onOpenResume: () => void }> = ({ onOpenResu
 
       {/* 3. HERO BOTTOM BAR: DEGREE, UNIVERSITY, CGPA & LOCATION */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full mt-12 pt-6 border-t border-darkBorder/60">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-mono text-[11px] text-mutedGray">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-mono text-xs text-mutedGray">
           <div>
-            <span className="block text-crimson font-bold text-[10px] uppercase tracking-wider mb-1">
+            <span className="block text-crimson font-bold text-xs uppercase tracking-wider mb-1">
               DEGREE
             </span>
             <span className="text-cream font-medium block">
@@ -178,31 +178,31 @@ export const HeroSection: React.FC<{ onOpenResume: () => void }> = ({ onOpenResu
           </div>
 
           <div>
-            <span className="block text-crimson font-bold text-[10px] uppercase tracking-wider mb-1">
+            <span className="block text-crimson font-bold text-xs uppercase tracking-wider mb-1">
               UNIVERSITY
             </span>
             <span className="text-cream font-medium block">
               {profileData.education.institutionShort}
             </span>
-            <span className="text-[10px] text-mutedGray block">
+            <span className="text-xs text-mutedGray block">
               DBATU Lonere Affiliated
             </span>
           </div>
 
           <div>
-            <span className="block text-crimson font-bold text-[10px] uppercase tracking-wider mb-1">
+            <span className="block text-crimson font-bold text-xs uppercase tracking-wider mb-1">
               ACADEMIC MERIT
             </span>
             <span className="text-cream font-medium block">
               CGPA: {profileData.education.cgpa}
             </span>
-            <span className="text-[10px] text-mutedGray block">
+            <span className="text-xs text-mutedGray block">
               Class of 2026
             </span>
           </div>
 
           <div>
-            <span className="block text-crimson font-bold text-[10px] uppercase tracking-wider mb-1">
+            <span className="block text-crimson font-bold text-xs uppercase tracking-wider mb-1">
               LOCATION
             </span>
             <span className="text-cream font-medium block">
@@ -215,7 +215,7 @@ export const HeroSection: React.FC<{ onOpenResume: () => void }> = ({ onOpenResu
       {/* Subtle Scroll Anchor */}
       <a
         href="#about"
-        className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 hidden md:flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-mutedGray hover:text-crimson transition-colors"
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 hidden md:flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-mutedGray hover:text-crimson focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-crimson rounded transition-colors"
       >
         <span>SCROLL DOWN</span>
         <ArrowDown className="h-3 w-3 text-crimson animate-bounce" />

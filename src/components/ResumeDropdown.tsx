@@ -67,14 +67,14 @@ export const ResumeDropdown: React.FC<{ onPreview?: (resume: ResumeItem) => void
                 <p className="font-display text-xs font-bold uppercase tracking-wider text-warmWhite">
                   Role-Specific Resumes
                 </p>
-                <p className="text-[10px] font-mono text-mutedIndigo">
+                <p className="text-xs font-mono text-mutedIndigo">
                   6 Available · 3 Awaiting Upload
                 </p>
               </div>
               <Link
                 to="/resumes"
                 onClick={() => setIsOpen(false)}
-                className="font-mono text-[10px] text-antiqueGold hover:underline flex items-center gap-1"
+                className="font-mono text-xs text-antiqueGold hover:underline flex items-center gap-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-antiqueGold rounded"
               >
                 <span>Full Centre</span>
                 <ArrowRight className="h-3 w-3" />
@@ -96,7 +96,7 @@ export const ResumeDropdown: React.FC<{ onPreview?: (resume: ResumeItem) => void
                         <Star className="h-3 w-3 fill-antiqueGold text-antiqueGold flex-shrink-0" />
                       )}
                     </div>
-                    <p className="text-[10px] text-mutedIndigo truncate">
+                    <p className="text-xs text-mutedIndigo truncate">
                       {resume.mappedRole}
                     </p>
                   </div>

@@ -43,7 +43,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
         {/* Top Header */}
         <div className="flex items-start justify-between gap-4 mb-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-crimson/30 bg-crimson/10 px-3 py-0.5 font-mono text-[10px] uppercase tracking-wider text-crimson mb-2 font-bold">
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-crimson/30 bg-crimson/10 px-3 py-0.5 font-mono text-xs uppercase tracking-wider text-crimson mb-2 font-bold">
               <Star className="h-3 w-3 fill-crimson text-crimson" />
               <span>Verified PDF Resumes</span>
             </div>
@@ -127,7 +127,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                       </a>
                     </>
                   ) : (
-                    <span className="font-mono text-[10px] text-mutedGray">
+                    <span className="font-mono text-xs text-mutedGray">
                       Awaiting Upload
                     </span>
                   )}
